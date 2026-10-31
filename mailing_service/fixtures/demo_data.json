@@ -1,0 +1,67 @@
+[
+  {
+    "model": "mailing_service.recipient",
+    "pk": 1,
+    "fields": {
+      "email": "ivan@example.com",
+      "full_name": "Иванов Иван Иванович",
+      "comment": "Постоянный клиент"
+    }
+  },
+  {
+    "model": "mailing_service.recipient",
+    "pk": 2,
+    "fields": {
+      "email": "petr@example.com",
+      "full_name": "Петров Пётр Петрович",
+      "comment": "Новый клиент"
+    }
+  },
+  {
+    "model": "mailing_service.recipient",
+    "pk": 3,
+    "fields": {
+      "email": "anna@example.com",
+      "full_name": "Сидорова Анна Сергеевна",
+      "comment": ""
+    }
+  },
+  {
+    "model": "mailing_service.message",
+    "pk": 1,
+    "fields": {
+      "subject": "Приветственная рассылка",
+      "body_message": "Здравствуйте! Это наше первое письмо."
+    }
+  },
+  {
+    "model": "mailing_service.message",
+    "pk": 2,
+    "fields": {
+      "subject": "Скидки в марте",
+      "body_message": "Только в марте скидка 20% на все услуги."
+    }
+  },
+  {
+    "model": "mailing_service.sending",
+    "pk": 1,
+    "fields": {
+      "first_sent_at": null,
+      "send_until": "2026-11-02T12:00:00Z",
+      "status": "created",
+      "message": 1,
+      "recipients": [1, 2]
+    }
+  },
+  {
+    "model": "mailing_service.sending",
+    "pk": 2,
+    "fields": {
+      "first_sent_at": "2026-10-25T12:00:00Z",
+      "send_until": "2026-10-29T12:00:00Z",
+      "status": "started",
+      "message": 2,
+      "recipients": [1, 2, 3]
+    }
+  }
+]

@@ -1,0 +1,50 @@
+{% extends 'mailing_service/base.html' %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-6 fw-semibold">Сервис рассылок</h1>
+    <p class="lead text-muted">Управление рассылками сообщений для клиентов</p>
+</div>
+
+<div class="row g-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body py-4">
+                <div class="text-primary mb-2"><i class="bi bi-send fs-1"></i></div>
+                <div class="display-5 fw-bold">{{ total_sendings }}</div>
+                <div class="text-muted">Всего рассылок</div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a href="{% url 'mailing_service:sending_list' %}" class="btn btn-sm btn-outline-primary">К рассылкам</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body py-4">
+                <div class="text-success mb-2"><i class="bi bi-play-circle fs-1"></i></div>
+                <div class="display-5 fw-bold">{{ active_sendings }}</div>
+                <div class="text-muted">Активных рассылок</div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a href="{% url 'mailing_service:sending_list' %}" class="btn btn-sm btn-outline-success">Запущенные</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body py-4">
+                <div class="text-info mb-2"><i class="bi bi-people fs-1"></i></div>
+                <div class="display-5 fw-bold">{{ total_recipients }}</div>
+                <div class="text-muted">Уникальных получателей</div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a href="{% url 'mailing_service:recipient_list' %}" class="btn btn-sm btn-outline-info">К получателям</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
